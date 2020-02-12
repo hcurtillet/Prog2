@@ -15,8 +15,10 @@ lifo_t lifo_push (CARTE e,lifo_t p){
 }
 
 lifo_t lifo_del_first(lifo_t p) {
-  // TODO
-  return NULL;
+  assert(!lifo_is_empty(p));
+  list_t res = p->next;
+  free( p );
+  return res;
 }
 
 /* la pile n'est pas modifiée */
