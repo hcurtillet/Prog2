@@ -36,9 +36,14 @@ int distribution(fifo_t* aj1, fifo_t *aj2, int alea, int nbcarte) { int i, retur
   CARTE c;
   for (i=0; i<nbcarte*4/2; i++) {
     *aj1=fifo_enqueue(c=take_one_card(tab,nbcarte*4-2*i),*aj1);
+    #ifdef MODEGRAPHIQUE
     if (c.im.data==NULL) return_value=0;
+    #endif
+
     *aj2=fifo_enqueue(c=take_one_card(tab,nbcarte*4-2*i-1),*aj2);
+    #ifdef MODEGRAPHIQUE
     if (c.im.data==NULL) return_value=0;
+    #endif
   }
   free(tab); tab=NULL;
   return return_value;

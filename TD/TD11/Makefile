@@ -1,5 +1,5 @@
-DIRSDL=/usr/local
-#DIRSDL=/users/prog1a/C/librairie/SDL2_Phelma
+#DIRSDL=/usr/local
+DIRSDL=/users/prog1a/C/librairie/SDL2_Phelma
 
 SRC= lifo.c list.c fifo.c element.c distribution.c
 OBJ1=$(SRC:.c=.o)
