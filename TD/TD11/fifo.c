@@ -11,30 +11,70 @@ int fifo_is_empty(fifo_t L){
 }
 
 void fifo_print(fifo_t L) {
-  // TODO
+printf("(");
+  if(!fifo_is_empty(L)){
+  fifo_t p,mem;
+  p=L;
+  p = p->next;
+  mem=p;
+  element_print( p->val );
+  p = p->next;
+  while (p!=mem){
+    element_print( p->val );
+    p = p->next;
+  }
+
+}
+printf(")\n");
 }
 
 fifo_t fifo_enqueue(CARTE e, fifo_t f){
-  // TODO
-  return NULL;
+  fifo_t add = calloc( 1, sizeof( *add ) );
+  if ( NULL == add ) {
+    fprintf( stderr, "Fatal: Unable to allocate new list link.\n" );
+    return f;
+  }
+  add->val=e;
+  if (fifo_is_empty(f)){
+    add->next=add;
+  }
+  else{
+    add->next = f->next;
+    f->next=add;
+  }
+  return add;
 }
 
 CARTE fifo_peek(fifo_t f){
-  // TODO
-  return element_empty();
+  CARTE e;
+  fifo_t p = f->next;
+  e = p->val;
+  return e;
 }
 
 fifo_t fifo_del_head(fifo_t f) {
-  // TODO
-  return NULL;
+  assert(!fifo_is_empty(f));
+  if (f == f->next){
+      free(f);
+      return NULL;
+  }
+  fifo_t p;
+  p=f->next;
+  f->next = p->next;
+  free(p);
+  return f;
 }
 
 CARTE fifo_dequeue(fifo_t* af) {
-  // TODO
-  return element_empty();
+  assert(!fifo_is_empty(*af));
+  CARTE e = fifo_peek(*af);
+  *af=fifo_del_head(*af);
+  return e;
 }
 
 fifo_t fifo_delete(fifo_t f) {
-  // TODO
-  return NULL;
+  while(!fifo_is_empty(f)){
+      f=fifo_del_head(f);
+  }
+  return f;
 }

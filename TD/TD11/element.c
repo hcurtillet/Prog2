@@ -9,8 +9,8 @@ void element_print (CARTE e) {
 }
 
 void element_init (CARTE* e) {
-    e->rang=-1;
-    e->visible=-1;
+    e->rang=0;
+    e->visible=0;
     e->couleur=0;
 }
 
@@ -21,7 +21,7 @@ CARTE element_empty() {
 }
 
 int element_is_empty(CARTE e) {
-  return (e.rang==-1 && e.couleur==0 && e.visible==-1);
+  return (e.rang==0 && e.couleur==0 && e.visible==0);
 }
 
 int element_equal(CARTE* e1, CARTE* e2) {

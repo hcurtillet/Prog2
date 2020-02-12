@@ -3,21 +3,7 @@
 
 typedef enum { TREFLE,CARREAU,COEUR,PIQUE} COULEUR;
 
-#ifdef MODEGRAPHIQUE
-typedef struct { unsigned int** data; int lig, col; } ICONE;
-typedef struct {
-  int rang;
-  char visible;
-  COULEUR couleur;
-  ICONE im,dos;
-  }  CARTE;
-#else
-typedef struct {
-  int rang;
-  char visible;
-  COULEUR couleur;
-  }  CARTE;
-#endif
+typedef struct { int rang; char visible; COULEUR couleur; } CARTE;
 
 typedef CARTE element_t;
 
