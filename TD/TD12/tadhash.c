@@ -80,13 +80,14 @@ void hashtable_print(hashtable_t t) {
 // A faire dans un second temps :
 
 int hashtable_delete_key(keys_t k, hashtable_t t) {
-  unsigned int h;
-  h=hash(k,t.size);
-  if (list_find_key(k,t.data[h]) == NULL) {
+  unsigned int h = hash(k,t.size);
+  list_t p;
+  p = list_find_key(k,t.data[h]);
+  if (p == NULL) {
     return 0;
   }
   else{
-    t.data[h]=list_delete_key( k, t.data[h]);
+    p=list_delete_key(k, p);
     return 1;
   }
 }

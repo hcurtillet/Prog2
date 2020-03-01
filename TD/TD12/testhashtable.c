@@ -23,7 +23,7 @@ int main(int a, char **b)
 
   // Ajout du couple "une",3
   puts("Ajout du couple \"une\",3");
-  hashtable_put("une",2,histo);
+  hashtable_put("une",3,histo);
   printf("Table \n");
   hashtable_print(histo);
   puts("---------------");
