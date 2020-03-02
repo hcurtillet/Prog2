@@ -60,12 +60,10 @@ int main(int a, char **b)
   // hashtable_sort_print(histo);
 
   // Affichage des performances
-  /*
   printf("\n\nLa duree de construction de l'histogramme est %lf\n",
     (double)(fin-debut)/CLOCKS_PER_SEC);
 
   hashtable_analyse(histo);
-  */
   // Liberation memoire; A commenter dans un premier temps.
   hashtable_delete(histo);
   fclose(fp);

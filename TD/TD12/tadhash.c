@@ -8,9 +8,9 @@ unsigned int hash(char* s, int n) {
   int i,a;
   a=31;
   for ( i =strlen(s) -1; i>=0; i--){
-    h = h+s[i];
+    h = h*a+tolower(s[i]);
   }
-  return strlen(s);
+  return h%n;
 
 }
 
@@ -31,15 +31,15 @@ hashtable_t hashtable_new(int m) {
 int hashtable_put(keys_t k, value_t v, hashtable_t t) {
   unsigned int h;
   element_t add;
-  add.key = k;
-  add.value = v;
   h=hash(k,t.size);
-  if (list_find_key(k,t.data[h]) == NULL) {
+  list_t p=list_find_key(k,t.data[h]);
+  if (p == NULL) {
+    add.key = strdup(k);
+    add.value = v;
     t.data[h]=list_add_first(add,t.data[h]);
   }
   else{
-    t.data[h]=list_delete_key( k, t.data[h]);
-    t.data[h]=list_add_first(add, t.data[h]);
+    p->val.value=v;
   }
   return 1;
 }
@@ -87,14 +87,18 @@ int hashtable_delete_key(keys_t k, hashtable_t t) {
     return 0;
   }
   else{
-    p=list_delete_key(k, p);
+    t.data[h]=list_delete_key(k, t.data[h]);
     return 1;
   }
 }
 
 hashtable_t hashtable_delete(hashtable_t t) {
-  //TODO completer
-
+  int i;
+  for (i=0; i < t.size; i++){
+      list_delete(t.data[i]);
+  }
+  free(t.data);
+  return t;
 }
 
 void hashtable_analyse(hashtable_t t) {

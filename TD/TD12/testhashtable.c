@@ -42,6 +42,13 @@ int main(int a, char **b)
   hashtable_print(histo);
   puts("---------------");
 
+  // Ajout du couple "ingénieurs",8
+  puts("Ajout du couple \"ingénieurs\",8");
+  hashtable_put("ingénieurs",8,histo);
+  printf("Table \n");
+  hashtable_print(histo);
+  puts("---------------");
+
   // Recherche de la cle "ecole"
   mot="ecole";
   printf("Recherche du mot %s\n",mot);
@@ -79,21 +86,21 @@ int main(int a, char **b)
   // Suppression; A commenter dans un premier temps.
 
   // Suppresion de l'element de cle  "ingénieurs"
-  printf("Affichage de la valeur associee au mot %s\n","ingénieurs");
-  hashtable_delete_key("ingénieurs",histo);
+  printf("Supprimer le mot %s\n","ecole");//ingénieurs");
+  hashtable_delete_key("ecole",histo);
   printf("Table \n");
   hashtable_print(histo);
   puts("---------------");
 
   // Suppresion de l'element de cle  "phelma"
-  printf("Affichage de la valeur associee au mot %s\n","phelma");
+  printf("Supprimer le  mot %s\n","phelma");
   hashtable_delete_key("phelma",histo);
   printf("Table \n");
   hashtable_print(histo);
   puts("---------------");
 
   // Suppresion de l'element de cle  "ense3"
-  printf("Affichage de la valeur associee au mot %s\n","ense3");
+  printf("Supprimer le mot %s\n","ense3");
   hashtable_delete_key("ense3",histo);
   printf("Table \n");
   hashtable_print(histo);
