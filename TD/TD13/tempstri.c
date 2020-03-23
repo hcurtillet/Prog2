@@ -74,7 +74,7 @@ int  main(){
     if (k<=MAX_DIM_SELECTION) temps3=0;
     for (j=1; j<10; j++) {
 		     /* Tirage aleatoire des nombres a trier */
-      for (l=0; l<k; l++) t1[l]=random();
+      for (l=0; l<k; l++) t1[l]=random()%100;
 		      /* Copie dans le deuxieme et troisieme  tableau */
       memcpy(t2,t1,k*sizeof(*t1));
       memcpy(t3,t1,k*sizeof(*t1));

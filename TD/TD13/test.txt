@@ -18,23 +18,23 @@ Ajout de -70 Nouveau tas : 160 140 100 80 10 -30 90 40 -70
 ---------------
 Ajout de 20 Nouveau tas : 160 140 100 80 20 -30 90 40 -70 10 
 ---------------
-Nouveau tas : 140 80 100 40 20 -30 90 0 -70 
+Nouveau tas : 140 80 100 40 20 -30 90 10 -70 
 ---------------
-Nouveau tas : 100 80 90 40 20 -30 10 0 
+Nouveau tas : 100 80 90 40 20 -30 -70 10 
 ---------------
 Nouveau tas : 90 80 10 40 20 -30 -70 
 ---------------
-Nouveau tas : 80 40 10 0 20 -30 
+Nouveau tas : 80 40 10 -70 20 -30 
 ---------------
-Nouveau tas : 40 20 10 0 -70 
+Nouveau tas : 40 20 10 -70 -30 
 ---------------
-Nouveau tas : 20 0 10 -30 
+Nouveau tas : 20 -30 10 -70 
 ---------------
-Nouveau tas : 10 0 -70 
+Nouveau tas : 10 -30 -70 
 ---------------
-Nouveau tas : 0 -30 
+Nouveau tas : -30 -70 
 ---------------
-Nouveau tas : -30 
+Nouveau tas : -70 
 ---------------
 Nouveau tas : 
 ---------------

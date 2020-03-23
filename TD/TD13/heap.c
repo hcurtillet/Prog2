@@ -62,10 +62,9 @@ int heap_delete_max(heap_t* ptas) {
   int tmp;
   p=ptas->data;
   int i;
-  i=ptas->number;
   ptas->number-=1;
+  i=ptas->number;
   p[0]=p[i];
-  p[i]=NULL;
   i=0;
   int ip=heap_largest_son( *ptas, i);
   while (ip!=-1){
