@@ -17,7 +17,7 @@ int main() {
   printf("Nouveau tas : ");  heap_print(tas);
   puts("---------------");
 
-  x=-90; printf("Ajout de "); element_print(x);
+  x=90; printf("Ajout de "); element_print(x);
   heap_add(x,&tas);
   printf("Nouveau tas : ");  heap_print(tas);
   puts("---------------");
@@ -27,7 +27,7 @@ int main() {
   printf("Nouveau tas : ");  heap_print(tas);
   puts("---------------");
 
-  x=-10; printf("Ajout de "); element_print(x);
+  x=10; printf("Ajout de "); element_print(x);
   heap_add(x,&tas);
   printf("Nouveau tas : ");  heap_print(tas);
   puts("---------------");
@@ -56,11 +56,6 @@ int main() {
   heap_add(x,&tas);
   printf("Nouveau tas : ");  heap_print(tas);
   puts("---------------");
-  int i;
-  for ( i = 0; i < 10; i++){
-      heap_delete_max(&tas);
-      printf("Nouveau tas : ");  heap_print(tas);
-      puts("---------------");
-  }
+  
   return EXIT_SUCCESS;
 }
