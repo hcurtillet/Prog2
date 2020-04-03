@@ -6,7 +6,7 @@ int main(int argc, char** argv) { char s[512];
   double xmin=-5, xmax=5;
   binarytree_t r=NULL;
   binarytree_t c=NULL;
-  int dx=300,dy=200;
+  int dx=400,dy=200;
   SDL_PHWindow* f1;
 
   printf("Ce programme teste les fonctions de copie et de liberation memoire\n");
@@ -22,6 +22,7 @@ int main(int argc, char** argv) { char s[512];
   */
   printf("On clone l'expression\n");
   c = binarytree_clone(r);
+  puts("Expression :"); expression_print_infixe(c); puts("");
   /*
     Supprime l'arbre initial
   */
