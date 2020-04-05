@@ -176,20 +176,23 @@ expression_t expression_derivation(expression_t r) {
           return expression_derivation_som(r);
         }
         else if (strcmp((r->value).string,"^")==0){
+          return expression_derivation_pow(r->left, r->right);
 
         }
       case OPERATEUR_UNAIRE:
         if (strcmp((r->value).string,"sin")==0){
-
+            return expression_derivation_sin(r);
         }
         if (strcmp((r->value).string,"cos")==0){
-
+            return expression_derivation_cos(r);
         }
         if (strcmp((r->value).string,"tan")==0){
 
         }
         if (strcmp((r->value).string,"sqrt")==0){
-
+          expression_t tmp;
+          tmp=expression_node_new("0.5");
+          return expression_derivation_pow(r->right, tmp);
         }
         if (strcmp((r->value).string,"exp")==0){
 
@@ -266,26 +269,20 @@ expression_t expression_derivation_div(expression_t r1, expression_t r2){
     r->right=binarytree_clone(r2);
 
   }
-  // le cas du - de signe n'est pas bien implémenter encore
-  /* else if (r1->value.type==VALEUR){
-    r->value.string="/";
-    r->value.type = OPERATEUR_BINAIRE;
+  else if (r1->value.type==VALEUR){
+    r=expression_node_new("/");
     expression_t rtmp, rtmp2;
     // v^2
-    rtmp->value.string="^";
-    rtmp->value.type = OPERATEUR_BINAIRE;
+    rtmp=expression_node_new("^");
     rtmp->left = binarytree_clone(r2);
     rtmp->right = expression_node_new("2");
     r->right=binarytree_clone(rtmp);
     //u'v-uv'
-    rtmp->value.string="-";
+    rtmp->value.string="*";
     rtmp->value.type = OPERATEUR_BINAIRE;
-
-    rtmp2->value.string="*";
-    rtmp2->value.type = OPERATEUR_BINAIRE;
-    // u'v
-    rtmp->left=NULL;
+    rtmp->left=expression_node_new("-1");
     //uv'
+    rtmp2=expression_node_new("*");
     rtmp2->left = binarytree_clone(r1);
     rtmp2->right = expression_derivation(r2);
     rtmp->right=binarytree_clone(rtmp2);
@@ -293,7 +290,7 @@ expression_t expression_derivation_div(expression_t r1, expression_t r2){
     r->left=binarytree_clone(rtmp);
     // on libère
     rtmp=binarytree_del(rtmp);rtmp2=binarytree_del(rtmp2);
-  }*/
+  }
   else{
     r=expression_node_new("/");
     expression_t rtmp, rtmp2;
@@ -323,10 +320,54 @@ expression_t expression_derivation_div(expression_t r1, expression_t r2){
   return r;
 }
 
+expression_t expression_derivation_pow(expression_t r1, expression_t r2){
+  expression_t r;
+  if (r2->value.type == VALEUR){
+      double tmppow;
+      tmppow=atof(r2->value.string);
+      tmppow-=1;
+      r=expression_node_new("*");
+      r->left=binarytree_clone(r2);
+      expression_t rtmp, rtmp2;
+      rtmp=expression_node_new("*");
+      rtmp->left=expression_derivation(r1);
+      rtmp2=expression_node_new("^");
+      char s[10];
+      sprintf(s, "%f", tmppow);
+      rtmp2->right=expression_node_new(s);
+      rtmp2->left=binarytree_clone(r1);
+      rtmp->right=rtmp2;
+      r->right = rtmp;
+      return r;
+
+  }
+}
+
+expression_t expression_derivation_sin(expression_t d){
+  expression_t r, rtmp;
+  r=expression_node_new("*");
+  r->left = expression_derivation(d->right);
+  rtmp=expression_node_new("cos");
+  rtmp->right=binarytree_clone(d->right);
+  r->right = rtmp;
+  return r;
+}
+
+expression_t expression_derivation_cos(expression_t d){
+  expression_t r, rtmp;
+  r=expression_node_new("*");
+  rtmp=expression_node_new("*");
+  rtmp->left=expression_node_new("-1");
+  rtmp->right = expression_derivation(d->right);
+  r->left = binarytree_clone(rtmp);
+  rtmp=expression_node_new("sin");
+  rtmp->right=binarytree_clone(d->right);
+  r->right = rtmp;
+  return r;
+}
 
 int expression_equal(expression_t r1, expression_t r2) {
-  // TODO
-  return 0;
+  return binarytree_equal(r1, r2);
 }
 
 

@@ -38,6 +38,16 @@ binarytree_t binarytree_clone(binarytree_t b) {
 }
 
 int binarytree_equal(binarytree_t r1, binarytree_t r2) {
-  //TODO
+  if (r1!= NULL && r2!= NULL){
+    if (strcmp((r1->value).string,(r2->value).string)==0){ // si on a egalité, on verifie que l'on a égalité sur les branches de droite et de gauche aussi
+        if (binarytree_equal(r1->left,r2->left)==0 && binarytree_equal(r1->right,r2->right)==0){
+          return 0;
+        }
+    }
+    else{ // sinon on arrète et on renvoit 1
+      return 1;
+    }
+  }
+  else if ((r1!= NULL && r2== NULL) || (r1== NULL && r2!= NULL)) return 1; // on n'a pas d'égalité de structure , on renvoit 1
   return 0;
 }

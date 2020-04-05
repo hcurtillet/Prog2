@@ -24,7 +24,9 @@ expression_t expression_derivation(expression_t r);
 expression_t expression_derivation_prod(expression_t r1, expression_t r2);
 expression_t expression_derivation_som(expression_t d);
 expression_t expression_derivation_div(expression_t r1, expression_t r2);
-
+expression_t expression_derivation_pow(expression_t r1, expression_t r2);
+expression_t expression_derivation_sin(expression_t d);
+expression_t expression_derivation_cos(expression_t d);
 // Retourne 1 si les 2 expressions sont egales
 // 2 expressions sont egales si les arbres sont identiques
 // ou si dans le cas d'operateurs commutatifs (+ et *)
