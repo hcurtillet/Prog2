@@ -1,0 +1,185 @@
+Le mot est Sommets du graphe
+Le mot est Arêtes du graphe : noeud1 noeud2 valeur
+On est la 0
+Element a ajouter: (Départ: 0, arrivée: 1, cout: 5.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+}
+On est la 1
+Element a ajouter: (Départ: 0, arrivée: 2, cout: 20.000000 )
+Liste avant:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+}
+Liste apres:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+}
+On est la 2
+Element a ajouter: (Départ: 0, arrivée: 3, cout: 40.000000 )
+Liste avant:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+}
+Liste apres:{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+ ( Début: 0, arrivée: 3, cout: 40.000000 )
+}
+On est la 3
+Element a ajouter: (Départ: 1, arrivée: 2, cout: 10.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+}
+On est la 4
+Element a ajouter: (Départ: 1, arrivée: 4, cout: 7.000000 )
+Liste avant:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+}
+Liste apres:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+}
+On est la 5
+Element a ajouter: (Départ: 1, arrivée: 5, cout: 20.000000 )
+Liste avant:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+}
+Liste apres:{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+ ( Début: 1, arrivée: 5, cout: 20.000000 )
+}
+On est la 6
+Element a ajouter: (Départ: 2, arrivée: 3, cout: 10.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+}
+On est la 7
+Element a ajouter: (Départ: 2, arrivée: 5, cout: 10.000000 )
+Liste avant:{
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+}
+Liste apres:{
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+ ( Début: 2, arrivée: 5, cout: 10.000000 )
+}
+On est la 8
+Element a ajouter: (Départ: 4, arrivée: 5, cout: 10.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+}
+On est la 9
+Element a ajouter: (Départ: 4, arrivée: 7, cout: 40.000000 )
+Liste avant:{
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+}
+Liste debut de fonction:{
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+}
+Liste apres:{
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+ ( Début: 4, arrivée: 7, cout: 40.000000 )
+}
+On est la 10
+Element a ajouter: (Départ: 6, arrivée: 5, cout: 20.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 6, arrivée: 5, cout: 20.000000 )
+}
+On est la 11
+Element a ajouter: (Départ: 7, arrivée: 5, cout: 10.000000 )
+Liste avant:{
+}
+Liste debut de fonction:{
+}
+C'est nul
+Liste apres:{
+ ( Début: 7, arrivée: 5, cout: 10.000000 )
+}
+Le graphe comporte 8 sommet(s) et 12 arc(s)
+On considère le sommet numéro 0 nommé Aaa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+ ( Début: 0, arrivée: 3, cout: 40.000000 )
+}
+On considère le sommet numéro 1 nommé Baa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+ ( Début: 1, arrivée: 5, cout: 20.000000 )
+}
+On considère le sommet numéro 2 nommé Caa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+ ( Début: 2, arrivée: 5, cout: 10.000000 )
+}
+On considère le sommet numéro 3 nommé Daa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+}
+On considère le sommet numéro 4 nommé Eaa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+ ( Début: 4, arrivée: 7, cout: 40.000000 )
+}
+On considère le sommet numéro 5 nommé Faa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+}
+On considère le sommet numéro 6 nommé Gaa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 6, arrivée: 5, cout: 20.000000 )
+}
+On considère le sommet numéro 7 nommé Haa de la ligne M1
+Voici les arcs partant de ce sommet:
+{
+ ( Début: 7, arrivée: 5, cout: 10.000000 )
+}
