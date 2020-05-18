@@ -1,5 +1,7 @@
 #include "graph.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 
 graph_t* newGraph(int nbSommet, int nbArc){
     graph_t* g; // On va allouer dinamiquement de la mémoire pour créer un nouveau graphe
@@ -8,6 +10,58 @@ graph_t* newGraph(int nbSommet, int nbArc){
     g->size_vertex = nbSommet;
     g->size_egdes = nbArc;
     return g;
+}
+
+fifo_t fifo_new(void){
+  return NULL;	/* la liste vide est representée par NULL	*/
+}
+
+int fifo_is_empty(fifo_t L){
+  return L==NULL;	/* la liste vide est representée par NULL	*/
+}
+
+fifo_t fifo_enqueue(int n, fifo_t f){
+  fifo_t add = calloc( 1, sizeof( *add ) );
+  if ( NULL == add ) {
+    fprintf( stderr, "Fatal: Unable to allocate new list link.\n" );
+    return f;
+  }
+  add->val=n;
+  if (fifo_is_empty(f)){
+    add->next=add;
+  }
+  else{
+    add->next = f->next;
+    f->next=add;
+  }
+  return add;
+}
+
+int fifo_peek(fifo_t f){
+  int e;
+  fifo_t p = f->next;
+  e = p->val;
+  return e;
+}
+
+fifo_t fifo_del_head(fifo_t f) {
+  assert(!fifo_is_empty(f));
+  if (f == f->next){
+      free(f);
+      return NULL;
+  }
+  fifo_t p;
+  p=f->next;
+  f->next = p->next;
+  free(p);
+  return f;
+}
+
+int fifo_dequeue(fifo_t* af) {
+  assert(!fifo_is_empty(*af));
+  int e = fifo_peek(*af);
+  *af=fifo_del_head(*af);
+  return e;
 }
 
 
@@ -106,7 +160,7 @@ int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
     }
     else{
       int trouve = 0; //On initialie trouve au début, trouve est propre au noeud en cours
-      listedge_t p = (graphe.data)[depart].edges;;
+      listedge_t p = (graphe.data)[depart].edges;
       if (p != NULL){
           while (p != NULL){
               double DistTemp;
@@ -129,12 +183,13 @@ int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
     }
 }
 
-graph_t  InitParcoursEnProfondeur(int depart, graph_t graphe){
+graph_t  InitGraphe(int depart, graph_t graphe){
   int i, size;
   size = graphe.size_vertex;
   for (i = 0; i < size; i++){ // On initialise les valeur de pcc à l'infini pour chaque noeud à l'exception du départ initialisé à 0
     (graphe.data)[i].pcc=INFINITY;
     (graphe.data)[i].father=-1; // la variable father nous permet de reconstruire le chemin en associant la provenance du pcc actuel
+    (graphe.data)[i].in_fifo=0;
   }
   (graphe.data)[depart].pcc=0;
   return graphe;
@@ -172,15 +227,47 @@ void printChemin( chemin_t chemin, graph_t graphe){
           elementEnCours = graphe.data[p->val];
           printf("Passer par %s de la ligne %s\n", elementEnCours.nom, elementEnCours.ligne);
           if (p->next == NULL){
-            printf("Le cout est de %lf", elementEnCours.pcc);
+            printf("Le cout est de %lf\n\n", elementEnCours.pcc);
           }
           p=p->next;
         }
     }
+    printf("----------------------------------------------------------------------------\n");
 }
 
 int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
+    fifo_t file = fifo_new();
+    graphe = InitGraphe(depart, graphe);
+    file=fifo_enqueue(depart, file);
+    (graphe.data)[depart].in_fifo=1;
+    while(!fifo_is_empty(file)){
+        int sommet;
+        sommet = fifo_dequeue(&file);
+        listedge_t p = (graphe.data)[sommet].edges;
+        if (p != NULL){
+          while (p != NULL){
+              double DistTemp;
+              DistTemp = (graphe.data)[sommet].pcc + (p->val).cout;
+              if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                  (graphe.data)[(p->val).arrivee].pcc = DistTemp;
+                  (graphe.data)[(p->val).arrivee].father = sommet;
+                  if ((graphe.data)[(p->val).arrivee].in_fifo == 0){
+                      file=fifo_enqueue((p->val).arrivee, file);
+                      (graphe.data)[(p->val).arrivee].in_fifo =1;
+                  }
+              }
+              p=p->next;
+              }
 
+        }
+
+    }
+    if ((graphe.data)[arrivee].pcc!=INFINITY){
+       return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 
@@ -188,16 +275,24 @@ int main(){
   graph_t * g=NULL;
   int depart, arrivee;
   depart = 0;
-  arrivee = 9;
-  g = creationGraph("graphe2.txt");
+  arrivee = 6;
+  g = creationGraph("graphe1.txt");
   graphPrint(g);
   int trouve;
-  *g = InitParcoursEnProfondeur(depart, *g);
+  *g = InitGraphe(depart, *g);
   printf("Init ok\n");
   graphPrint(g);
   int pause;
   //scanf("%d",&pause);
   trouve = ParcoursEnProfondeur(depart,arrivee, *g);
+  printf(" fin du code trouve = %d\n",trouve);
+  //scanf("%d",&pause);
+  if (trouve == 1){
+    chemin_t chemin;
+    chemin = LectureDeChemin(depart, arrivee, *g);
+    printChemin(chemin, *g);
+  }
+  trouve = ParcoursEnLargeur(depart,arrivee, *g);
   printf(" fin du code trouve = %d\n",trouve);
   //scanf("%d",&pause);
   if (trouve == 1){

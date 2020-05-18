@@ -1,275 +1,143 @@
-Le graphe comporte 14 sommet(s) et 29 arc(s)
+Le graphe comporte 8 sommet(s) et 12 arc(s)
 ----------------------------------------------------------------------------
-On considère le sommet numéro 0 nommé 	Sommet1 de la ligne M1
-Ses coordonnées sont 0.050000 en latitude et 0.700000 en longitude
+On considère le sommet numéro 0 nommé 	Aaa 1 de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.950000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 0, arrivée: 1, cout: 2.000000 )
- ( Début: 0, arrivée: 3, cout: 4.000000 )
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+ ( Début: 0, arrivée: 3, cout: 40.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 1 nommé 	Sommet2 de la ligne M1
-Ses coordonnées sont 0.050000 en latitude et 0.300000 en longitude
+On considère le sommet numéro 1 nommé 	Baa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.700000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 1, arrivée: 4, cout: 2.000000 )
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+ ( Début: 1, arrivée: 5, cout: 20.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 2 nommé 	Sommet3 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.900000 en longitude
+On considère le sommet numéro 2 nommé 	Caa de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.700000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 2, arrivée: 0, cout: 3.000000 )
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+ ( Début: 2, arrivée: 5, cout: 10.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 3 nommé 	Sommet4 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.500000 en longitude
+On considère le sommet numéro 3 nommé 	Daa de la ligne M1
+Ses coordonnées sont 0.900000 en latitude et 0.700000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 3, arrivée: 1, cout: 1.000000 )
- ( Début: 3, arrivée: 2, cout: 2.000000 )
- ( Début: 3, arrivée: 5, cout: 2.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 4 nommé 	Sommet5 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.100000 en longitude
+On considère le sommet numéro 4 nommé 	Eaa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.350000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 4, arrivée: 3, cout: 3.000000 )
- ( Début: 4, arrivée: 7, cout: 4.000000 )
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+ ( Début: 4, arrivée: 7, cout: 40.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 5 nommé 	Sommet6 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.700000 en longitude
+On considère le sommet numéro 5 nommé 	Faa de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.350000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 5, arrivée: 2, cout: 1.000000 )
- ( Début: 5, arrivée: 8, cout: 1.000000 )
- ( Début: 5, arrivée: 3, cout: 4.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 6 nommé 	Sommet7 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.500000 en longitude
+On considère le sommet numéro 6 nommé 	Gaa de la ligne M1
+Ses coordonnées sont 0.900000 en latitude et 0.350000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 6, arrivée: 4, cout: 2.000000 )
- ( Début: 6, arrivée: 5, cout: 3.000000 )
- ( Début: 6, arrivée: 9, cout: 8.000000 )
+ ( Début: 6, arrivée: 5, cout: 20.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 7 nommé 	Sommet8 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.300000 en longitude
+On considère le sommet numéro 7 nommé 	Haa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.050000 en longitude
 Ses paramètres sont 0.000000 en pcc et 0 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 7, arrivée: 6, cout: 1.000000 )
- ( Début: 7, arrivée: 10, cout: 4.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 8 nommé 	Sommet9 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.900000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 8, arrivée: 2, cout: 5.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 9 nommé 	Sommet10 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.500000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 9, arrivée: 10, cout: 1.000000 )
- ( Début: 9, arrivée: 11, cout: 1.000000 )
- ( Début: 9, arrivée: 5, cout: 2.000000 )
- ( Début: 9, arrivée: 8, cout: 3.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 10 nommé 	Sommet11 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.100000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 10, arrivée: 6, cout: 2.000000 )
- ( Début: 10, arrivée: 12, cout: 2.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 11 nommé 	Sommet12 de la ligne M1
-Ses coordonnées sont 0.800000 en latitude et 0.700000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 11, arrivée: 8, cout: 5.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 12 nommé 	Sommet13 de la ligne M1
-Ses coordonnées sont 0.800000 en latitude et 0.300000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 12, arrivée: 9, cout: 3.000000 )
- ( Début: 12, arrivée: 13, cout: 4.000000 )
- ( Début: 12, arrivée: 11, cout: 6.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 13 nommé 	Sommet14 de la ligne M1
-Ses coordonnées sont 0.950000 en latitude et 0.500000 en longitude
-Ses paramètres sont 0.000000 en pcc et 0 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 13, arrivée: 11, cout: 2.000000 )
+ ( Début: 7, arrivée: 5, cout: 10.000000 )
 }
 ----------------------------------------------------------------------------
 Init ok
-Le graphe comporte 14 sommet(s) et 29 arc(s)
+Le graphe comporte 8 sommet(s) et 12 arc(s)
 ----------------------------------------------------------------------------
-On considère le sommet numéro 0 nommé 	Sommet1 de la ligne M1
-Ses coordonnées sont 0.050000 en latitude et 0.700000 en longitude
+On considère le sommet numéro 0 nommé 	Aaa 1 de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.950000 en longitude
 Ses paramètres sont 0.000000 en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 0, arrivée: 1, cout: 2.000000 )
- ( Début: 0, arrivée: 3, cout: 4.000000 )
+ ( Début: 0, arrivée: 1, cout: 5.000000 )
+ ( Début: 0, arrivée: 2, cout: 20.000000 )
+ ( Début: 0, arrivée: 3, cout: 40.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 1 nommé 	Sommet2 de la ligne M1
-Ses coordonnées sont 0.050000 en latitude et 0.300000 en longitude
+On considère le sommet numéro 1 nommé 	Baa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.700000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 1, arrivée: 4, cout: 2.000000 )
+ ( Début: 1, arrivée: 2, cout: 10.000000 )
+ ( Début: 1, arrivée: 4, cout: 7.000000 )
+ ( Début: 1, arrivée: 5, cout: 20.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 2 nommé 	Sommet3 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.900000 en longitude
+On considère le sommet numéro 2 nommé 	Caa de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.700000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 2, arrivée: 0, cout: 3.000000 )
+ ( Début: 2, arrivée: 3, cout: 10.000000 )
+ ( Début: 2, arrivée: 5, cout: 10.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 3 nommé 	Sommet4 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.500000 en longitude
+On considère le sommet numéro 3 nommé 	Daa de la ligne M1
+Ses coordonnées sont 0.900000 en latitude et 0.700000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 3, arrivée: 1, cout: 1.000000 )
- ( Début: 3, arrivée: 2, cout: 2.000000 )
- ( Début: 3, arrivée: 5, cout: 2.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 4 nommé 	Sommet5 de la ligne M1
-Ses coordonnées sont 0.200000 en latitude et 0.100000 en longitude
+On considère le sommet numéro 4 nommé 	Eaa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.350000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 4, arrivée: 3, cout: 3.000000 )
- ( Début: 4, arrivée: 7, cout: 4.000000 )
+ ( Début: 4, arrivée: 5, cout: 10.000000 )
+ ( Début: 4, arrivée: 7, cout: 40.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 5 nommé 	Sommet6 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.700000 en longitude
+On considère le sommet numéro 5 nommé 	Faa de la ligne M1
+Ses coordonnées sont 0.500000 en latitude et 0.350000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 5, arrivée: 2, cout: 1.000000 )
- ( Début: 5, arrivée: 8, cout: 1.000000 )
- ( Début: 5, arrivée: 3, cout: 4.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 6 nommé 	Sommet7 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.500000 en longitude
+On considère le sommet numéro 6 nommé 	Gaa de la ligne M1
+Ses coordonnées sont 0.900000 en latitude et 0.350000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 6, arrivée: 4, cout: 2.000000 )
- ( Début: 6, arrivée: 5, cout: 3.000000 )
- ( Début: 6, arrivée: 9, cout: 8.000000 )
+ ( Début: 6, arrivée: 5, cout: 20.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 7 nommé 	Sommet8 de la ligne M1
-Ses coordonnées sont 0.400000 en latitude et 0.300000 en longitude
+On considère le sommet numéro 7 nommé 	Haa de la ligne M1
+Ses coordonnées sont 0.100000 en latitude et 0.050000 en longitude
 Ses paramètres sont inf en pcc et -1 en father
 Voici les arcs partant de ce sommet:
 {
- ( Début: 7, arrivée: 6, cout: 1.000000 )
- ( Début: 7, arrivée: 10, cout: 4.000000 )
+ ( Début: 7, arrivée: 5, cout: 10.000000 )
 }
 ----------------------------------------------------------------------------
-On considère le sommet numéro 8 nommé 	Sommet9 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.900000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 8, arrivée: 2, cout: 5.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 9 nommé 	Sommet10 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.500000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 9, arrivée: 10, cout: 1.000000 )
- ( Début: 9, arrivée: 11, cout: 1.000000 )
- ( Début: 9, arrivée: 5, cout: 2.000000 )
- ( Début: 9, arrivée: 8, cout: 3.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 10 nommé 	Sommet11 de la ligne M1
-Ses coordonnées sont 0.600000 en latitude et 0.100000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 10, arrivée: 6, cout: 2.000000 )
- ( Début: 10, arrivée: 12, cout: 2.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 11 nommé 	Sommet12 de la ligne M1
-Ses coordonnées sont 0.800000 en latitude et 0.700000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 11, arrivée: 8, cout: 5.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 12 nommé 	Sommet13 de la ligne M1
-Ses coordonnées sont 0.800000 en latitude et 0.300000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 12, arrivée: 9, cout: 3.000000 )
- ( Début: 12, arrivée: 13, cout: 4.000000 )
- ( Début: 12, arrivée: 11, cout: 6.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 13 nommé 	Sommet14 de la ligne M1
-Ses coordonnées sont 0.950000 en latitude et 0.500000 en longitude
-Ses paramètres sont inf en pcc et -1 en father
-Voici les arcs partant de ce sommet:
-{
- ( Début: 13, arrivée: 11, cout: 2.000000 )
-}
-----------------------------------------------------------------------------
- fin du code trouve = 1
-Voici le chemin le plus efficace
-----------------------------------------------------------------------------
- Valeur de p 0
-Passer par 	Sommet1 de la ligne M1
- Valeur de p 1
-Passer par 	Sommet2 de la ligne M1
- Valeur de p 4
-Passer par 	Sommet5 de la ligne M1
- Valeur de p 7
-Passer par 	Sommet8 de la ligne M1
- Valeur de p 6
-Passer par 	Sommet7 de la ligne M1
- Valeur de p 9
-Passer par 	Sommet10 de la ligne M1
-Le cout est de 17.000000
+ fin du code trouve = 0
+ fin du code trouve = 0
