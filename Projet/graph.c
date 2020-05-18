@@ -11,10 +11,6 @@ graph_t* newGraph(int nbSommet, int nbArc){
 }
 
 
-void edgePrint( edge_t *element){
-    printf("Départ: %d, arrivée: %d, cout: %lf \n",element->depart, element->arrivee, element->cout);
-}
-
 void list_print(listedge_t l) {
   listedge_t p;
   edge_t val;
@@ -27,14 +23,13 @@ void list_print(listedge_t l) {
 }
 
 listedge_t addElement(edge_t *element, listedge_t list){
-    printf("Liste debut de fonction:");list_print(list);
     listedge_t add = calloc (1, sizeof (*add));
     if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
     add->val = *element;
     add->next = NULL;
     listedge_t p;
     p = list;
-    if ( p == NULL){printf("C'est nul\n");return add;}
+    if ( p == NULL){return add;}
     while(p->next!=NULL){
         p=p->next;
     }
@@ -59,53 +54,29 @@ graph_t * creationGraph(char* fName){
     if (graphe==NULL) { printf("Impossible d’allouer dynamiquement de graphe\n"); exit(EXIT_FAILURE);}
     /* Ligne de texte "Sommets du graphe" qui ne sert a rien */
     fgets(mot,511,f);
-    printf("Le mot est %s",mot);
+    //printf("Le mot est %s",mot);
     /* lecture d’une ligne de description d’un sommet */
     /* on lit d’abord numero du sommet, la position, le nom de la ligne */
     int i;
     vertex_t * p;
     for (i = 0; i < nbSommet; i++){// on va lire chaque ligne de sommet et les attribuer à notre graphe
-        fscanf(f,"%d %lf %lf %s %s", &numero, &lat, &longi, line, name);
+        fscanf(f,"%d %lf %lf %s", &numero, &lat, &longi, line);
+        fgets(mot,511,f);
+        if (mot[strlen(mot)-1]<32) mot[strlen(mot)-1]=0;
         (graphe->data)[numero].numero = numero;
-        (graphe->data)[numero].nom = strdup(name);
+        (graphe->data)[numero].nom = strdup(mot);
         (graphe->data)[numero].ligne = strdup(line);
         (graphe->data)[numero].x=lat;
         (graphe->data)[numero].y=longi;
     }
     fgets(mot,511,f); // on saute la ligne inutile
-    fgets(mot,511,f); // on saute la ligne inutile
-    printf("Le mot est %s",mot);
     edge_t * newVal=calloc(1, sizeof(*newVal));
     for ( i = 0; i < nbArc; i++){
         fscanf(f, "%d %d %lf", &depart , &arrivee, &cout); // on lit les elements de l'arcs
         newVal->depart = depart;
         newVal->arrivee = arrivee;
         newVal->cout = cout;
-        printf("On est la %d\n",i);
-        printf("Element a ajouter: (Départ: %d, arrivée: %d, cout: %lf )\n",depart, arrivee,cout);
-        printf("Liste avant:");list_print((graphe->data)[depart].edges);
-        /*
-        listedge_t p;
-        p = (graphe->data)[depart].edges;
-        if ( p == NULL){
-          printf("C'est nul\n");
-          (graphe->data)[depart].edges=calloc (1, sizeof (*(graphe->data)[depart].edges));
-          (graphe->data)[depart].edges->val=*newVal;
-          (graphe->data)[depart].edges->next=NULL;
-        }
-        else{
-          listedge_t add = calloc (1, sizeof (*add));
-          if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
-          add->val = *newVal;
-          add->next = NULL;
-          while(p->next!=NULL){
-              p=p->next;
-          }
-          p->next=add;
-        }*/
         (graphe->data)[depart].edges=addElement(newVal, (graphe->data)[depart].edges);
-
-        printf("Liste apres:");list_print((graphe->data)[depart].edges);
 
     }
     fclose(f);
@@ -117,17 +88,123 @@ void graphPrint(graph_t * graphe){ int i;
     int nbArc = graphe->size_egdes;
     vertex_t* pdata = graphe->data;
     printf("Le graphe comporte %d sommet(s) et %d arc(s)\n", nbSommet, nbArc);
+    printf("----------------------------------------------------------------------------\n");
     for (i = 0; i < nbSommet; i++){
         printf("On considère le sommet numéro %d nommé %s de la ligne %s\n",pdata[i].numero,pdata[i].nom,pdata[i].ligne);
+        printf("Ses coordonnées sont %lf en latitude et %lf en longitude\n",pdata[i].x, pdata[i].y);
+        printf("Ses paramètres sont %lf en pcc et %d en father\n",pdata[i].pcc, pdata[i].father);
         printf("Voici les arcs partant de ce sommet:\n");
         list_print(pdata[i].edges);
+        printf("----------------------------------------------------------------------------\n");
     }
 
 }
 
+int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
+    if (depart == arrivee){
+      return 1; // on a trouver l'arrivée, on retourne 1
+    }
+    else{
+      int trouve = 0; //On initialie trouve au début, trouve est propre au noeud en cours
+      listedge_t p = (graphe.data)[depart].edges;;
+      if (p != NULL){
+          while (p != NULL){
+              double DistTemp;
+              DistTemp = (graphe.data)[depart].pcc + (p->val).cout;
+              if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                  (graphe.data)[(p->val).arrivee].pcc = DistTemp;
+                  (graphe.data)[(p->val).arrivee].father = depart;
+                  int trouve2 = ParcoursEnProfondeur((p->val).arrivee, arrivee,graphe);
+                  if (trouve2 == 1){ /* On actualise la variable trouve uniquement pour la passer à 1.
+                  En effet si le premier chemin fonctionne, trouve va passer à 1, mais si un chemin suivit plus tard
+                  dans l'exécution du code ne fonctionne pas,trouve ne doit pas passer à 0
+                  au risque de retourner 0 si le dernier chemin ne fonctionne pas*/
+                      trouve = trouve2;
+                  }
+              }
+              p=p->next;
+          }
+       }
+       return trouve;
+    }
+}
+
+graph_t  InitParcoursEnProfondeur(int depart, graph_t graphe){
+  int i, size;
+  size = graphe.size_vertex;
+  for (i = 0; i < size; i++){ // On initialise les valeur de pcc à l'infini pour chaque noeud à l'exception du départ initialisé à 0
+    (graphe.data)[i].pcc=INFINITY;
+    (graphe.data)[i].father=-1; // la variable father nous permet de reconstruire le chemin en associant la provenance du pcc actuel
+  }
+  (graphe.data)[depart].pcc=0;
+  return graphe;
+}
+
+chemin_t LectureDeChemin(int depart, int arrivee, graph_t graphe){ // on crée une liste contenant les noeuds utilisée dans l'ordre. On utilise la variable father pour cela
+    chemin_t chemin=NULL;
+    int elementEnCours = arrivee;
+    do{
+      chemin_t add = calloc (1, sizeof (*add));
+      if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
+      add->val = elementEnCours;
+      add->next = chemin;
+      chemin=add;
+      elementEnCours = graphe.data[elementEnCours].father;
+    }while(elementEnCours != depart);
+    chemin_t add = calloc (1, sizeof (*add));
+    if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
+    add->val = elementEnCours;
+    add->next = chemin;
+    chemin=add;
+    elementEnCours = graphe.data[elementEnCours].father;
+    return chemin;
+}
+
+void printChemin( chemin_t chemin, graph_t graphe){
+    chemin_t p;
+    p = chemin;
+    vertex_t elementEnCours;
+    printf("Voici le chemin le plus efficace\n");
+    printf("----------------------------------------------------------------------------\n");
+    if (p != NULL){
+        while( p != NULL){
+          printf(" Valeur de p %d\n",p->val);
+          elementEnCours = graphe.data[p->val];
+          printf("Passer par %s de la ligne %s\n", elementEnCours.nom, elementEnCours.ligne);
+          if (p->next == NULL){
+            printf("Le cout est de %lf", elementEnCours.pcc);
+          }
+          p=p->next;
+        }
+    }
+}
+
+int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
+
+}
+
+
 int main(){
   graph_t * g=NULL;
-  g = creationGraph("graphe1.txt");
+  int depart, arrivee;
+  depart = 0;
+  arrivee = 9;
+  g = creationGraph("graphe2.txt");
   graphPrint(g);
+  int trouve;
+  *g = InitParcoursEnProfondeur(depart, *g);
+  printf("Init ok\n");
+  graphPrint(g);
+  int pause;
+  //scanf("%d",&pause);
+  trouve = ParcoursEnProfondeur(depart,arrivee, *g);
+  printf(" fin du code trouve = %d\n",trouve);
+  //scanf("%d",&pause);
+  if (trouve == 1){
+    chemin_t chemin;
+    chemin = LectureDeChemin(depart, arrivee, *g);
+    printChemin(chemin, *g);
+  }
   return 0;
+
 }
