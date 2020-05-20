@@ -40,6 +40,38 @@ int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
         int sommet;
         sommet = fifo_dequeue(&file);
         listedge_t p = (graphe.data)[sommet].edges;
+        while (p != NULL){
+            double DistTemp;
+            DistTemp = (graphe.data)[sommet].pcc + (p->val).cout;
+            if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                (graphe.data)[(p->val).arrivee].pcc = DistTemp;
+                (graphe.data)[(p->val).arrivee].father = sommet;
+                if ((graphe.data)[(p->val).arrivee].in_fifo == 0){
+                    file=fifo_enqueue((p->val).arrivee, file);
+                    (graphe.data)[(p->val).arrivee].in_fifo =1;
+                }
+            }
+            p=p->next;
+            }
+    }
+    if ((graphe.data)[arrivee].pcc!=INFINITY){
+       return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+int Dijkstra_like(int depart, int arrivee, graph_t graphe){
+    heap_t heap = heap_new(graphe.size_vertex);
+    graphe = InitGraphe(depart, graphe);
+    heap_add(depart, &heap, graphe);
+    (graphe.data)[depart].in_heap=1;
+    while(!heap_is_empty(heap) && ((graphe.data)[arrivee].pcc == INFINITY)){
+        int sommet;
+        sommet = heap_get_top(&heap,graphe);
+        (graphe.data)[sommet].in_heap=0;
+        listedge_t p = (graphe.data)[sommet].edges;
         if (p != NULL){
           while (p != NULL){
               double DistTemp;
@@ -47,9 +79,11 @@ int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
               if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
                   (graphe.data)[(p->val).arrivee].pcc = DistTemp;
                   (graphe.data)[(p->val).arrivee].father = sommet;
-                  if ((graphe.data)[(p->val).arrivee].in_fifo == 0){
-                      file=fifo_enqueue((p->val).arrivee, file);
-                      (graphe.data)[(p->val).arrivee].in_fifo =1;
+                  if ( (graphe.data)[arrivee].in_heap==0){
+                    heap_add(sommet, &heap, graphe);
+                  }
+                  else{
+                      heap = heap_sort(heap, graphe);
                   }
               }
               p=p->next;
@@ -66,6 +100,7 @@ int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
     }
 }
 
+
 graph_t  InitGraphe(int depart, graph_t graphe){
   int i, size;
   size = graphe.size_vertex;
@@ -73,6 +108,7 @@ graph_t  InitGraphe(int depart, graph_t graphe){
     (graphe.data)[i].pcc=INFINITY;
     (graphe.data)[i].father=-1; // la variable father nous permet de reconstruire le chemin en associant la provenance du pcc actuel
     (graphe.data)[i].in_fifo=0;
+    (graphe.data)[i].in_heap=0;
   }
   (graphe.data)[depart].pcc=0;
   return graphe;

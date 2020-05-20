@@ -31,7 +31,8 @@ double x,y;
 listedge_t edges;
 double pcc;
 int father;
-char in_fifo; //permet de signaler si un somme est ou pas dans la file
+char in_fifo; //permet de signaler si un sommet est ou pas dans la file
+char in_heap; //permet de signaler si un sommet est ou pas dans le tas
 /*
 indice du sommet
 Nom donne au sommet
@@ -57,6 +58,15 @@ typedef struct _fifolink { //structure pour les files
   int val; /* un élément de la liste*/
   struct _fifolink *next; /* l'adresse du maillon suivant */
 } * fifo_t;
+
+typedef
+  struct {
+    int* data;
+    int max_size;
+    int number;
+  } heap_t;
+
+
 
 // Cette fonction a pour objectif de créer un nouveau graphe à partir d'un fichier donné
 graph_t* creationGraph(char* fName);
@@ -121,3 +131,23 @@ int fifo_dequeue(fifo_t * p_queue);
     //  - et la file modifiée, dont on enlevée l'ancienne tête
     // Il faut donc, en C, utiliser un passage par adresse pour l'une
     // de ces deux valeurs (ici : la file)
+
+
+
+// Fonctions de gestion des heap
+
+
+
+heap_t heap_new(int m);
+int heap_is_empty(heap_t tas);
+int heap_add(int valeur, heap_t* ptas, graph_t graphe);
+int heap_get_top(heap_t tas);
+int heap_get_top(heap_t* ptas, graph_t graphe);
+int heap_verification(heap_t tas) ;
+void heap_delete(heap_t* ptas);
+void heap_print(heap_t tas, graph_t graphe) ;
+heap_t heap_sort(heap_t tab, graph_t graphe) ;
+
+#define HEAP_FATHER(i) ( ((i)-1)/2)
+#define HEAP_LEFTSON(i) ( 2*(i)+1)
+#define HEAP_RIGHTSON(i) ( 2*((i)+1))

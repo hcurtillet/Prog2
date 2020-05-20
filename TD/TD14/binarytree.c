@@ -13,7 +13,7 @@ binarytree_t  binarytree_new()  {
 }
 
 int  binarytree_is_empty(binarytree_t r)  {
-  return r==NULL;hey
+  return r==NULL;
 }
 
 
