@@ -141,7 +141,6 @@ int fifo_dequeue(fifo_t * p_queue);
 heap_t heap_new(int m);
 int heap_is_empty(heap_t tas);
 int heap_add(int valeur, heap_t* ptas, graph_t graphe);
-int heap_get_top(heap_t tas);
 int heap_get_top(heap_t* ptas, graph_t graphe);
 int heap_verification(heap_t tas) ;
 void heap_delete(heap_t* ptas);

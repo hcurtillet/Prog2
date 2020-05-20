@@ -20,14 +20,14 @@ int heap_add(int valeur, heap_t* ptas, graph_t graphe) {
   i=ptas->number;
   p[i]=valeur;
   printf("On affiche le tas avant:\n");
-  heap_print(*ptas);
+  heap_print(*ptas, graphe);
   while (i!=0 && (graphe.data)[p[i]].pcc> (graphe.data)[p[(i-1)/2]].pcc){
     tmp = p[i];
     p[i]=p[(i-1)/2];
     p[(i-1)/2] =tmp;
     i=(i-1)/2;
     printf("On affiche le tas:\n");
-    heap_print(*ptas);
+    heap_print(*ptas, graphe);
   }
   ptas->number+=1;
   return 1;

@@ -30,12 +30,12 @@ int main(){
   }
   heap_t tas = heap_new(g->size_vertex);
   int sommet;
-  sommet = g->data[2].numero;
+  sommet =2;
   printf("Test du tas ---------------------------------------------------\n");
   printf("Ajout du sommet %d\n",sommet);
   heap_add(sommet,&tas,*g);
   heap_print(tas, *g);
-  sommet = g->data[4].numero;
+  sommet = 5;
   printf("Test du tas ---------------------------------------------------\n");
   printf("Ajout du sommet %d\n",sommet);
   heap_add(sommet,&tas,*g);

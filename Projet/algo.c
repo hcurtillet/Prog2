@@ -67,7 +67,7 @@ int Dijkstra_like(int depart, int arrivee, graph_t graphe){
     graphe = InitGraphe(depart, graphe);
     heap_add(depart, &heap, graphe);
     (graphe.data)[depart].in_heap=1;
-    while(!heap_is_empty(heap) && ((graphe.data)[arrivee].pcc == INFINITY)){
+    while(!heap_is_empty(heap) && ((graphe.data)[arrivee].in_heap == 0)){
         int sommet;
         sommet = heap_get_top(&heap,graphe);
         (graphe.data)[sommet].in_heap=0;
@@ -81,6 +81,7 @@ int Dijkstra_like(int depart, int arrivee, graph_t graphe){
                   (graphe.data)[(p->val).arrivee].father = sommet;
                   if ( (graphe.data)[arrivee].in_heap==0){
                     heap_add(sommet, &heap, graphe);
+                    (graphe.data)[sommet].in_heap = 1;
                   }
                   else{
                       heap = heap_sort(heap, graphe);
