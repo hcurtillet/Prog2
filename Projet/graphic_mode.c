@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-
+#include "graph.h"
+#include <stdlib.h>
+#include <assert.h>
 #include <SDL2/SDL_phelma.h>
 
 int main(int argc, char *argv[])
@@ -19,7 +21,7 @@ int main(int argc, char *argv[])
     fenetre = SDL_PH_CreateWindow(dimx, dimy);
         /* Cette fenetre est remplie par un rectangle de couleur verdatre (R=17, V=206, B=112),
            chaque couleur primaire pouvant aller de 0 à 255 */
-    boxRGBA(fenetre->rendu,0,0,dimx,dimy,17,206,112,255);
+    boxRGBA(fenetre->rendu,0,0,dimx,dimy,17,5,5,5);
 
         /* Auto repeat du clavier */
     //SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
@@ -27,6 +29,14 @@ int main(int argc, char *argv[])
     /*  On affiche une ellispe en 100 200, axe 40 et 10, couleur Verte, pas de transparence
         les 4 dernies parametres representent R=0, V=255, B=0, Alpha(ou transparence)=255
     */
+    graph_t * g=NULL;
+    g = creationGraph("graphe1.txt");
+    int i=0;
+    vertex_t element;
+    for (i = 0; i < g->size_vertex; i++){
+        element = g->data[i];
+        filledEllipseColor(fenetre->rendu, element.x,element.y,40,40,SDL_PH_YELLOW);
+    }
     filledEllipseColor(fenetre->rendu, 100,100,40,40,SDL_PH_YELLOW);
     SDL_PH_FlushWindow(fenetre); // Mise à jour de l'écran
     printf("Tapez une touche pour continuer\n"); getchar();

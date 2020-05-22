@@ -1,6 +1,6 @@
 DIRSDL=/usr
 
-CFLAGS= -c -g  -I$(DIRSDL)/include  -Wall -I  /use/include/SDL2 
+CFLAGS= -c -g  -I$(DIRSDL)/include  -Wall -I  /use/include/SDL2
 LDFLAGS= -L$(DIRSDL)/lib -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2_image -lSDL2_phelma -lSDL_sound
 
 
@@ -46,8 +46,8 @@ test_chemins.o : test_chemins.c
 test_heap.o : test_heap.c
 	clang $(CFLAGS) test_heap.c
 
-lab.o : Lab.c
-	clang $(LDFLAGS) Lab.c
+graphic_mode.o : graphic_mode.c
+	clang $(LDFLAGS) graphic_mode.c
 
 clean:
 	rm -f *.o fifo_list main algo graphe_lecture mainProg heap parcours_stations
