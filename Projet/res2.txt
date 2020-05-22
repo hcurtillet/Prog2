@@ -1,62 +1,30 @@
-Le graphe comporte 8 sommet(s) et 12 arc(s)
+Init ok
+ fin du code trouve = 1
+ fin du code trouve = 1
+Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
-On considère le sommet numéro 0 nommé 	Aaa 1 de la ligne M1
-Ses coordonnées sont 0.500000 en latitude et 0.950000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 0, arrivée: 1, cout: 5.000000 )
- ( Début: 0, arrivée: 2, cout: 20.000000 )
- ( Début: 0, arrivée: 3, cout: 40.000000 )
-}
+ Valeur de p 3
+Passer par 	Sommet4 de la ligne M1 
+ Valeur de p 1
+Passer par 	Sommet2 de la ligne M1 
+ Valeur de p 4
+Passer par 	Sommet5 de la ligne M1 
+ Valeur de p 7
+Passer par 	Sommet8 de la ligne M1 
+Le cout est de 7.000000
+
 ----------------------------------------------------------------------------
-On considère le sommet numéro 1 nommé 	Baa de la ligne M1
-Ses coordonnées sont 0.100000 en latitude et 0.700000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 1, arrivée: 2, cout: 10.000000 )
- ( Début: 1, arrivée: 4, cout: 7.000000 )
- ( Début: 1, arrivée: 5, cout: 20.000000 )
-}
+ fin du code trouve = 1
+Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
-On considère le sommet numéro 2 nommé 	Caa de la ligne M1
-Ses coordonnées sont 0.500000 en latitude et 0.700000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 2, arrivée: 3, cout: 10.000000 )
- ( Début: 2, arrivée: 5, cout: 10.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 3 nommé 	Daa de la ligne M1
-Ses coordonnées sont 0.900000 en latitude et 0.700000 en longitude
-Voici les arcs partant de ce sommet:
-{
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 4 nommé 	Eaa de la ligne M1
-Ses coordonnées sont 0.100000 en latitude et 0.350000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 4, arrivée: 5, cout: 10.000000 )
- ( Début: 4, arrivée: 7, cout: 40.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 5 nommé 	Faa de la ligne M1
-Ses coordonnées sont 0.500000 en latitude et 0.350000 en longitude
-Voici les arcs partant de ce sommet:
-{
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 6 nommé 	Gaa de la ligne M1
-Ses coordonnées sont 0.900000 en latitude et 0.350000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 6, arrivée: 5, cout: 20.000000 )
-}
-----------------------------------------------------------------------------
-On considère le sommet numéro 7 nommé 	Haa de la ligne M1
-Ses coordonnées sont 0.100000 en latitude et 0.050000 en longitude
-Voici les arcs partant de ce sommet:
-{
- ( Début: 7, arrivée: 5, cout: 10.000000 )
-}
+ Valeur de p 3
+Passer par 	Sommet4 de la ligne M1 
+ Valeur de p 1
+Passer par 	Sommet2 de la ligne M1 
+ Valeur de p 4
+Passer par 	Sommet5 de la ligne M1 
+ Valeur de p 7
+Passer par 	Sommet8 de la ligne M1 
+Le cout est de 7.000000
+
 ----------------------------------------------------------------------------

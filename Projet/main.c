@@ -5,51 +5,34 @@
 
 int main(){
   graph_t * g=NULL;
-  int depart, arrivee;
-  depart = 0;
-  arrivee = 5;
-  g = creationGraph("graphe1.txt");
-  graphPrint(g);
-  int trouve;
-  *g = InitGraphe(depart, *g);
-  printf("Init ok\n");
-  graphPrint(g);
-  trouve = ParcoursEnProfondeur(depart,arrivee, *g);
-  printf(" fin du code trouve = %d\n",trouve);
-  if (trouve == 1){
-    chemin_t chemin;
-    chemin = LectureDeChemin(depart, arrivee, *g);
-    printChemin(chemin, *g);
-  }
-  trouve = ParcoursEnLargeur(depart,arrivee, *g);
-  printf(" fin du code trouve = %d\n",trouve);
-  if (trouve == 1){
-    chemin_t chemin;
-    chemin = LectureDeChemin(depart, arrivee, *g);
-    printChemin(chemin, *g);
-  }
+  g = creationGraph("grapheUSAOuest.csv");
+  //graphPrint(g);
+  //int trouve;
+  char * nomDepart;
+  char * nomArrive;
+  nomDepart = "Sommets59";
+  nomArrive = "Sommets5919627";
+  parcours(nomDepart, nomArrive,2, g);
+  /*
   heap_t tas = heap_new(g->size_vertex);
-  int sommet;
-  sommet =2;
-  printf("Test du tas ---------------------------------------------------\n");
-  printf("Ajout du sommet %d\n",sommet);
-  heap_add(sommet,&tas,*g);
+  int sommet = 1;
+  heap_add(sommet, &tas, *g);
   heap_print(tas, *g);
-  sommet = 5;
-  printf("Test du tas ---------------------------------------------------\n");
-  printf("Ajout du sommet %d\n",sommet);
-  heap_add(sommet,&tas,*g);
+  sommet = 4;
+  heap_add(sommet, &tas, *g);
   heap_print(tas, *g);
-  sommet = g->data[6].numero;
-  printf("Test du tas ---------------------------------------------------\n");
-  printf("Ajout du sommet %d\n",sommet);
-  heap_add(sommet,&tas,*g);
+  sommet = 6;
+  heap_add(sommet, &tas, *g);
   heap_print(tas, *g);
-  sommet = g->data[1].numero;
-  printf("Test du tas ---------------------------------------------------\n");
-  printf("Ajout du sommet %d\n",sommet);
-  heap_add(sommet,&tas,*g);
+  sommet = 2;
+  heap_add(sommet, &tas, *g);
   heap_print(tas, *g);
+  printf("On récupère le top\n");
+  sommet = heap_get_top(&tas,*g);
+  heap_print(tas, *g);
+  */
+
+
 
   return 0;
 

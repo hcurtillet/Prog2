@@ -32,7 +32,7 @@ graph_t * creationGraph(char* fName){
     /* on lit d’abord numero du sommet, la position, le nom de la ligne */
     int i;
     for (i = 0; i < nbSommet; i++){// on va lire chaque ligne de sommet et les attribuer à notre graphe
-        fscanf(f,"%d %lf %lf %s", &numero, &lat, &longi, line);
+        fscanf(f,"%d %lf %lf %s ", &numero, &lat, &longi, line);
         fgets(mot,511,f);
         if (mot[strlen(mot)-1]<32) mot[strlen(mot)-1]=0;
         (graphe->data)[numero].numero = numero;
@@ -55,7 +55,8 @@ graph_t * creationGraph(char* fName){
     return graphe;
 }
 
-void graphPrint(graph_t * graphe){ int i;
+void graphPrint(graph_t * graphe){
+    int i;
     int nbSommet = graphe->size_vertex;
     int nbArc = graphe->size_egdes;
     vertex_t* pdata = graphe->data;

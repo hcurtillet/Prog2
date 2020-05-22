@@ -19,15 +19,15 @@ int heap_add(int valeur, heap_t* ptas, graph_t graphe) {
   p=ptas->data;
   i=ptas->number;
   p[i]=valeur;
-  printf("On affiche le tas avant:\n");
-  heap_print(*ptas, graphe);
-  while (i!=0 && (graphe.data)[p[i]].pcc> (graphe.data)[p[(i-1)/2]].pcc){
+  //printf("On affiche le tas avant:\n");
+  //heap_print(*ptas, graphe);
+  while (i!=0 && graphe.data[p[i]].pcc < graphe.data[p[(i-1)/2]].pcc){
     tmp = p[i];
     p[i]=p[(i-1)/2];
     p[(i-1)/2] =tmp;
     i=(i-1)/2;
-    printf("On affiche le tas:\n");
-    heap_print(*ptas, graphe);
+    //printf("On affiche le tas:\n");
+    //heap_print(*ptas, graphe);
   }
   ptas->number+=1;
   return 1;
@@ -92,8 +92,9 @@ void heap_delete(heap_t* ptas) {
 void heap_print(heap_t tas, graph_t graphe) {
   vertex_t* pdata = graphe.data;
   for (int i=0; i<tas.number; i++){
-      printf("On considère le sommet numéro %d nommé %s de la ligne %s\n",pdata[i].numero,pdata[i].nom,pdata[i].ligne);
-      printf("Ses paramètres sont %lf en pcc et %d en father\n",pdata[i].pcc, pdata[i].father);
+      int k=tas.data[i];
+      printf("On considère le sommet numéro %d nommé %s de la ligne %s\n",pdata[k].numero,pdata[k].nom,pdata[k].ligne);
+      printf("Ses paramètres sont %lf en pcc et %d en father\n",pdata[k].pcc, pdata[k].father);
 
       printf("----------------------------------------------------------------------------\n");
   }

@@ -31,7 +31,6 @@ int heap_add(element_t valeur, heap_t* ptas) {
   }
   ptas->number+=1;
   return 1;
-
 }
 
 

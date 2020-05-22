@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <assert.h>
 int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
+    if (depart >= graphe.size_vertex || arrivee >= graphe.size_vertex ){
+        printf("Les sommets demandés ne sont pas dans le graphe");
+        return 0;
+    }
     if (depart == arrivee){
       return 1; // on a trouver l'arrivée, on retourne 1
     }
@@ -13,10 +17,11 @@ int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
           while (p != NULL){
               double DistTemp;
               DistTemp = (graphe.data)[depart].pcc + (p->val).cout;
-              if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
-                  (graphe.data)[(p->val).arrivee].pcc = DistTemp;
-                  (graphe.data)[(p->val).arrivee].father = depart;
-                  int trouve2 = ParcoursEnProfondeur((p->val).arrivee, arrivee,graphe);
+              int sommetArrive = (p->val).arrivee;
+              if ((DistTemp < (graphe.data)[sommetArrive].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                  (graphe.data)[sommetArrive].pcc = DistTemp;
+                  (graphe.data)[sommetArrive].father = depart;
+                  int trouve2 = ParcoursEnProfondeur(sommetArrive, arrivee,graphe);
                   if (trouve2 == 1){ /* On actualise la variable trouve uniquement pour la passer à 1.
                   En effet si le premier chemin fonctionne, trouve va passer à 1, mais si un chemin suivit plus tard
                   dans l'exécution du code ne fonctionne pas,trouve ne doit pas passer à 0
@@ -32,6 +37,10 @@ int ParcoursEnProfondeur(int depart, int arrivee, graph_t graphe){
 }
 
 int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
+    if (depart >= graphe.size_vertex || arrivee >= graphe.size_vertex ){
+        printf("Les sommets demandés ne sont pas dans le graphe");
+        return 0;
+    }
     fifo_t file = fifo_new();
     graphe = InitGraphe(depart, graphe);
     file=fifo_enqueue(depart, file);
@@ -43,12 +52,13 @@ int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
         while (p != NULL){
             double DistTemp;
             DistTemp = (graphe.data)[sommet].pcc + (p->val).cout;
-            if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
-                (graphe.data)[(p->val).arrivee].pcc = DistTemp;
-                (graphe.data)[(p->val).arrivee].father = sommet;
-                if ((graphe.data)[(p->val).arrivee].in_fifo == 0){
-                    file=fifo_enqueue((p->val).arrivee, file);
-                    (graphe.data)[(p->val).arrivee].in_fifo =1;
+            int sommetArrive = (p->val).arrivee;
+            if ((DistTemp < (graphe.data)[sommetArrive].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                (graphe.data)[sommetArrive].pcc = DistTemp;
+                (graphe.data)[sommetArrive].father = sommet;
+                if ((graphe.data)[sommetArrive].in_fifo == 0){
+                    file=fifo_enqueue(sommetArrive, file);
+                    (graphe.data)[sommetArrive].in_fifo =1;
                 }
             }
             p=p->next;
@@ -63,41 +73,70 @@ int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe){
 }
 
 int Dijkstra_like(int depart, int arrivee, graph_t graphe){
+    if (depart >= graphe.size_vertex || arrivee >= graphe.size_vertex ){
+        printf("Les sommets demandés ne sont pas dans le graphe");
+        return 0;
+    }
     heap_t heap = heap_new(graphe.size_vertex);
     graphe = InitGraphe(depart, graphe);
     heap_add(depart, &heap, graphe);
     (graphe.data)[depart].in_heap=1;
-    while(!heap_is_empty(heap) && ((graphe.data)[arrivee].in_heap == 0)){
+    while(!heap_is_empty(heap)){
         int sommet;
         sommet = heap_get_top(&heap,graphe);
         (graphe.data)[sommet].in_heap=0;
+        /*
+        printf("Sommet de départ considéré: %d\n",sommet);
+        printf("Affichage du tas:----------------------------------------------------\n");
+        heap_print(heap, graphe);
+        printf("Fin affichage du tas:----------------------------------------------------\n");
+        */
         listedge_t p = (graphe.data)[sommet].edges;
+        /*
+        int i = 0;
+        for (i=0; i<graphe.size_vertex;i++){
+            printf("Valeur de présence de %d = %d\n",i, graphe.data[i].in_heap);
+        }*/
         if (p != NULL){
           while (p != NULL){
               double DistTemp;
               DistTemp = (graphe.data)[sommet].pcc + (p->val).cout;
-              if ((DistTemp < (graphe.data)[(p->val).arrivee].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
-                  (graphe.data)[(p->val).arrivee].pcc = DistTemp;
-                  (graphe.data)[(p->val).arrivee].father = sommet;
-                  if ( (graphe.data)[arrivee].in_heap==0){
-                    heap_add(sommet, &heap, graphe);
-                    (graphe.data)[sommet].in_heap = 1;
+              int sommetArrive = (p->val).arrivee;
+              //printf("sommet: %d, sommet suivant:%d\n", sommet, (p->val.arrivee));
+              //printf("Valleur DistTemp= %lf, valeur pcc arrivee = %lf, valeur de présence= %d\n", DistTemp, (graphe.data)[sommetArrive].pcc,(graphe.data)[sommetArrive].in_heap);
+              if ((DistTemp < (graphe.data)[sommetArrive].pcc) && ((DistTemp < (graphe.data)[arrivee].pcc))){
+                  //printf("On modifie\n");
+                  //printf("Valeur de présence:%d\n",(graphe.data)[sommetArrive].in_heap);
+                  (graphe.data)[sommetArrive].pcc = DistTemp;
+                  (graphe.data)[sommetArrive].father = sommet;
+                  if ( (graphe.data)[sommetArrive].in_heap==0){
+                    //printf("%d n'est pas dans le tas\n", (graphe.data)[sommetArrive].numero);
+                    heap_add((graphe.data)[sommetArrive].numero, &heap, graphe);
+                    (graphe.data)[sommetArrive].in_heap = 1;
+                    /*
+                    printf("Affichage du tas après ajout de %d:----------------------------------------------------\n", (graphe.data)[arrivee].numero);
+                    heap_print(heap, graphe);
+                    printf("Fin affichage du tas:----------------------------------------------------\n");*/
                   }
                   else{
                       heap = heap_sort(heap, graphe);
+                      /*
+                      printf("On actualise le tas\n");
+                      printf("Affichage du tas après ajout de %d:----------------------------------------------------\n", (graphe.data)[arrivee].numero);
+                      heap_print(heap, graphe);
+                      printf("Fin affichage du tas:----------------------------------------------------\n");*/
                   }
               }
               p=p->next;
               }
 
         }
-
     }
-    if ((graphe.data)[arrivee].pcc!=INFINITY){
-       return 1;
+    if ((graphe.data)[arrivee].pcc==INFINITY){
+       return 0;
     }
     else{
-        return 0;
+        return 1;
     }
 }
 
@@ -113,44 +152,4 @@ graph_t  InitGraphe(int depart, graph_t graphe){
   }
   (graphe.data)[depart].pcc=0;
   return graphe;
-}
-
-chemin_t LectureDeChemin(int depart, int arrivee, graph_t graphe){ // on crée une liste contenant les noeuds utilisée dans l'ordre. On utilise la variable father pour cela
-    chemin_t chemin=NULL;
-    int elementEnCours = arrivee;
-    do{
-      chemin_t add = calloc (1, sizeof (*add));
-      if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
-      add->val = elementEnCours;
-      add->next = chemin;
-      chemin=add;
-      elementEnCours = graphe.data[elementEnCours].father;
-    }while(elementEnCours != depart);
-    chemin_t add = calloc (1, sizeof (*add));
-    if ( add == NULL){printf("Problème dans l'allocation du maillons\n"); exit(EXIT_FAILURE);}
-    add->val = elementEnCours;
-    add->next = chemin;
-    chemin=add;
-    elementEnCours = graphe.data[elementEnCours].father;
-    return chemin;
-}
-
-void printChemin( chemin_t chemin, graph_t graphe){
-    chemin_t p;
-    p = chemin;
-    vertex_t elementEnCours;
-    printf("Voici le chemin le plus efficace\n");
-    printf("----------------------------------------------------------------------------\n");
-    if (p != NULL){
-        while( p != NULL){
-          printf(" Valeur de p %d\n",p->val);
-          elementEnCours = graphe.data[p->val];
-          printf("Passer par %s de la ligne %s\n", elementEnCours.nom, elementEnCours.ligne);
-          if (p->next == NULL){
-            printf("Le cout est de %lf\n\n", elementEnCours.pcc);
-          }
-          p=p->next;
-        }
-    }
-    printf("----------------------------------------------------------------------------\n");
 }

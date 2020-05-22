@@ -99,7 +99,11 @@ void printChemin( chemin_t chemin, graph_t graphe);
 // Cette fonction utilise l'algotithme BFS afin de trouver le chemin qle plus efficace
 int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe);
 
+// Cette fonction utilise un algorithme similaire à celui de Dijkstra afin de trouver le chemin le plus efficace
+int Dijkstra_like(int depart, int arrivee, graph_t graphe);
 
+// Cette fonction cherche le plus cours chemin lorsque à l'aide des noms des stations
+void parcours(char * nomDepart, char * nomArrive, char algo, graph_t * graphe);
 
 
 // fonction de gestion de files
