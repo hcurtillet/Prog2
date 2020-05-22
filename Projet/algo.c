@@ -109,24 +109,13 @@ int Dijkstra_like(int depart, int arrivee, graph_t graphe){
                   //printf("Valeur de présence:%d\n",(graphe.data)[sommetArrive].in_heap);
                   (graphe.data)[sommetArrive].pcc = DistTemp;
                   (graphe.data)[sommetArrive].father = sommet;
-                  if ( (graphe.data)[sommetArrive].in_heap==0){
-                    //printf("%d n'est pas dans le tas\n", (graphe.data)[sommetArrive].numero);
-                    heap_add((graphe.data)[sommetArrive].numero, &heap, graphe);
-                    (graphe.data)[sommetArrive].in_heap = 1;
-                    /*
-                    printf("Affichage du tas après ajout de %d:----------------------------------------------------\n", (graphe.data)[arrivee].numero);
-                    heap_print(heap, graphe);
-                    printf("Fin affichage du tas:----------------------------------------------------\n");*/
+                  if ( (graphe.data)[sommetArrive].in_heap==0){ // cas ou le sommet n'est pas dans le tas
+                    heap_add((graphe.data)[sommetArrive].numero, &heap, graphe); // On l'ajoute
+                    (graphe.data)[sommetArrive].in_heap = 1; // on passe l'indicateur de présence à 1
                   }
-                  else{
-                      heap = heap_sort(heap, graphe);
-                      /*
-                      printf("On actualise le tas\n");
-                      printf("Affichage du tas après ajout de %d:----------------------------------------------------\n", (graphe.data)[arrivee].numero);
-                      heap_print(heap, graphe);
-                      printf("Fin affichage du tas:----------------------------------------------------\n");*/
-                  }
-              }
+                  else{ //sinon, le sommet est dans le tas
+                      heap = heap_sort(heap, graphe); // on actualise le tas
+                    }
               p=p->next;
               }
 
@@ -138,6 +127,7 @@ int Dijkstra_like(int depart, int arrivee, graph_t graphe){
     else{
         return 1;
     }
+  }
 }
 
 

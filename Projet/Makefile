@@ -13,6 +13,9 @@ testAlgoProg : algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o ch
 testCheminsProg : algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o test_chemins.o
 	clang $(LDFLAGS) algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o test_chemins.o -o testCheminsProg
 
+testHeapProg : algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o test_heap.o
+	clang $(LDFLAGS) algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o test_heap.o -o testHeapProg
+
 main.o : main.c
 	clang $(CFLAGS) main.c
 
@@ -39,6 +42,9 @@ test_algo.o : test_algo.c
 
 test_chemins.o : test_chemins.c
 	clang $(CFLAGS) test_chemins.c
+
+test_heap.o : test_heap.c
+	clang $(CFLAGS) test_heap.c
 
 lab.o : Lab.c
 	clang $(LDFLAGS) Lab.c
