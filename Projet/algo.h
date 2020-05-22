@@ -11,5 +11,5 @@ chemin_t LectureDeChemin(int depart, int arrivee, graph_t graphe);
 // Cette fonction affiche correctement un chemin donnée
 void printChemin( chemin_t chemin, graph_t graphe);
 
-// Cette fonction utilise l'algotithme BFS afin de trouver le chemin qle plus efficace
+// Cette fonction utilise l'algotithme BFS afin de trouver le chemin le plus efficace
 int ParcoursEnLargeur(int depart, int arrivee, graph_t graphe);
