@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[])
 {   SDL_PHWindow* fenetre;
-    int dimx=400, dimy=300;
+    int dimx=1000, dimy=1000;
 
     printf("Ce programme teste l'affichage de forme deometrique simple avec la SDL\n");
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     /*  On affiche une ellispe en 100 200, axe 40 et 10, couleur Verte, pas de transparence
         les 4 dernies parametres representent R=0, V=255, B=0, Alpha(ou transparence)=255
     */
-    filledEllipseColor(fenetre->rendu, 100,200,40,10,SDL_PH_YELLOW);
+    filledEllipseColor(fenetre->rendu, 100,100,40,40,SDL_PH_YELLOW);
     SDL_PH_FlushWindow(fenetre); // Mise à jour de l'écran
     printf("Tapez une touche pour continuer\n"); getchar();
 
