@@ -169,10 +169,8 @@ Voici les arcs partant de ce sommet:
 }
 ----------------------------------------------------------------------------
 --------------------------------------------------------------------
-Affichage de l'ancien tas tasAddOn considère le sommet numéro 0 nommé Aaa de la ligne M1
-Ses paramètres sont 37.000000 en pcc et 0 en father
-----------------------------------------------------------------------------
+Affichage de l'ancien tas tasAdd
 On considère le sommet numéro 0 nommé Aaa de la ligne M1
 Ses paramètres sont 37.000000 en pcc et 0 en father
 ----------------------------------------------------------------------------
-zsh: segmentation fault (core dumped)  ./testHeapProg
+On considère le som

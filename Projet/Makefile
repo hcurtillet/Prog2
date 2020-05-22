@@ -1,7 +1,7 @@
-DIRSDL=/users/prog1a/C/librairie/SDL2_Phelma
+DIRSDL=/usr
 
-CFLAGS= -c -g  -I$(DIRSDL)/include  -Wall
-LDFLAGS= -L$(DIRSDL)/lib -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2_image -lSDL2_phelma -lm -lSDL_sound
+CFLAGS= -c -g  -I$(DIRSDL)/include  -Wall -I  /use/include/SDL2 
+LDFLAGS= -L$(DIRSDL)/lib -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2_image -lSDL2_phelma -lSDL_sound
 
 
 mainProg : algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o  main.o

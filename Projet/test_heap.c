@@ -40,7 +40,6 @@ int main(){
   printf("--------------------------------------------------------------------\n");
   printf("Le sommet du tas vaut %d\n",top);
   printf("--------------------------------------------------------------------\n");
-  heap_add(top, &tasAdd, *grapheTest);
 
   // On change à nouveau les pcc des sommets
 
@@ -59,7 +58,7 @@ int main(){
   // On affiche les tas
 
   printf("--------------------------------------------------------------------\n");
-  printf("Affichage de l'ancien tas tasAdd");
+  printf("Affichage de l'ancien tas tasAdd\n");
   heap_print(tasAdd, *grapheTest);
   printf("--------------------------------------------------------------------\n");
   printf("Affichage du tas tasTri :\n");

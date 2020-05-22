@@ -4,6 +4,7 @@ void parcours(char * nomDepart, char * nomArrivee, char algo, graph_t * graphe){
     int i=0;
     int sommetDepart=-1, sommetArrivee=-1;
     while(sommetDepart == -1 || sommetArrivee == -1){ //On cherche un sommet correspondant au nom des stations de départ et d'arrivée
+    // on se fiche de savoir s'il  ya un ou plusieurs sommets associés au même nom de station
         if(strcmp((graphe->data)[i].nom,nomDepart)==0){
             sommetDepart = (graphe->data)[i].numero;
         }
@@ -19,17 +20,19 @@ void parcours(char * nomDepart, char * nomArrivee, char algo, graph_t * graphe){
         printf("Parcours en profondeur\n");
         *graphe = InitGraphe(sommetDepart, *graphe);
         trouve = ParcoursEnProfondeur(0,5, *graphe);
-        printf("Trouve = %d\n",trouve);
     }
     else if (algo ==  2){
+      printf("Parcours en largeur\n");
         trouve = ParcoursEnLargeur(sommetDepart,sommetArrivee, *graphe);
     }
     else{
+      printf("Parcours Dijkstra like\n");
         trouve = Dijkstra_like(sommetDepart,sommetArrivee, *graphe);
     }
     if (trouve == 1){
       chemin_t chemin;
-      chemin = LectureDeChemin(sommetDepart, sommetArrivee, *graphe);
+      chemin = LectureDeChemin(sommetDepart, sommetArrivee, *graphe); //On construit notre chemin
+      // Nous allons maintenant vérifier que nous n'avosn pas pris de correspondances inutiles lors de notre chemin, notamment au départ et à l'arrivée
       chemin_t chemin2;
       chemin2 = chemin->next;
       char * nomstation1 = (graphe->data)[chemin->val].nom;
@@ -60,10 +63,10 @@ void parcours(char * nomDepart, char * nomArrivee, char algo, graph_t * graphe){
           }
           nomstation2 = (graphe->data)[chemin2->val].nom;
           nomstation3 = (graphe->data)[chemin3->val].nom;
-          if (strcmp(nomstation2,nomstation3)==0){
+          if (strcmp(nomstation2,nomstation3)==0){ //s'ils ont le même nom, on supprime le dernier sommet
               chemin2->next = NULL;
           }
-          else break;
+          else break; //sinon, on sort de la boucle
       }
       printChemin(chemin, *graphe);
     }

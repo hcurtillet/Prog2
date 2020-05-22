@@ -70,7 +70,7 @@ int heap_get_top(heap_t* ptas, graph_t graphe) {
   int ip=heap_smallest_son( *ptas, i, graphe);
   while (ip!=-1){
     tmp=p[i];
-    if ((graphe.data)[p[i]].pcc>(graphe.data)[p[ip]].pcc){
+    if ((graphe.data)[p[i]].pcc > (graphe.data)[p[ip]].pcc){
       p[i]=p[ip];
       p[ip]=tmp;
       i=ip;
