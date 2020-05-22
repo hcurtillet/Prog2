@@ -1,7 +1,7 @@
 DIRSDL=/users/prog1a/C/librairie/SDL2_Phelma
 
-CFLAGS= -c -g   -Wall
-LDFLAGS= -L$(DIRSDL)/lib -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2_image -lSDL2_phelma -lm
+CFLAGS= -c -g  -I$(DIRSDL)/include  -Wall
+LDFLAGS= -L$(DIRSDL)/lib -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2_image -lSDL2_phelma -lm -lSDL_sound
 
 
 mainProg : algo.o graphe_lecture.o fifo_list.o heap.o parcours_stations.o chemins.o  main.o
@@ -39,6 +39,9 @@ test_algo.o : test_algo.c
 
 test_chemins.o : test_chemins.c
 	clang $(CFLAGS) test_chemins.c
+
+lab.o : Lab.c
+	clang $(LDFLAGS) Lab.c
 
 clean:
 	rm -f *.o fifo_list main algo graphe_lecture mainProg heap parcours_stations

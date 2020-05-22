@@ -3,49 +3,48 @@
 
 #include <SDL2/SDL_phelma.h>
 
-int main(int ar, char** ag) { int ligne=500,col=660,i,j,nbligne,nbcol;
-  unsigned char** im;
-  SDL_PHWindow* f;
+int main(int argc, char *argv[])
+{   SDL_PHWindow* fenetre;
+    int dimx=400, dimy=300;
 
-  printf("Ce programme lit une image en niveau de gris sur 8 bits pgm dans un tableau 2D, affiche l'image dans une partie de la fenetre graphique, inverse l'image (noir --> blanc), et affiche cette image inversée a un autre endroit dnas la meme fenetre\n");
+    printf("Ce programme teste l'affichage de forme deometrique simple avec la SDL\n");
 
-  if (ar !=2 || strstr(ag[1],".pgm")==NULL) {   fprintf(stderr,"Usage : %s fichierimage.pgm\n",ag[0]);
-    exit(EXIT_FAILURE);
-  }
-    /* Lecture de l'image au format pgm */
-  im=SDL_PH_ReadIm8(ag[1],&nbligne,&nbcol);
-  if (im==NULL) { printf("Erreur chargement image %s\n",ag[1]); exit(0) ; }
-
-    /* initialisation du systeme video,audio de la SDL */
+    /* Iniitalisation de la SDL */
   if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO| SDL_INIT_EVENTS) !=0) {
-    fprintf(stderr,"initialisation de la SDL impossible : %s\n", SDL_GetError());
-    exit(EXIT_FAILURE);
-  }
-    /* Creation d'une fenetre graphique de ligne lignes et col colonnes */
-  if( ( f=SDL_PH_CreateWindow(col,ligne)) == NULL) {
-    fprintf(stderr,"Creation de fenetre impossible : %s\n", SDL_GetError());
+    fprintf(stderr,"initialisation SDL impossible : %s ",SDL_GetError());
     exit(EXIT_FAILURE);
   }
 
-    /* Affichage de l'image en 100,10  dans la grande fenetre */
-  SDL_PH_DrawIm8(f,im,nbligne,nbcol,100,10);
+        /* Creation d'une fenetre de dimension dimx x dimy, couleurs sur 32 bits */
+    fenetre = SDL_PH_CreateWindow(dimx, dimy);
+        /* Cette fenetre est remplie par un rectangle de couleur verdatre (R=17, V=206, B=112),
+           chaque couleur primaire pouvant aller de 0 à 255 */
+    boxRGBA(fenetre->rendu,0,0,dimx,dimy,17,206,112,255);
 
-    /* Et maintenant, on attend */
-  puts("Taper pour continuer"); getchar();
+        /* Auto repeat du clavier */
+    //SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
-    /* On parcourt toute l'image et on inverse chaque pixel */
-  for (i=0; i<nbligne; i++)
-    for (j=0; j<nbcol; j++) {
-      im[i][j]=255-im[i][j];
+    /*  On affiche une ellispe en 100 200, axe 40 et 10, couleur Verte, pas de transparence
+        les 4 dernies parametres representent R=0, V=255, B=0, Alpha(ou transparence)=255
+    */
+    filledEllipseColor(fenetre->rendu, 100,200,40,10,SDL_PH_YELLOW);
+    SDL_PH_FlushWindow(fenetre); // Mise à jour de l'écran
+    printf("Tapez une touche pour continuer\n"); getchar();
+
+    /*  On affiche une ellispe en 300 200, axe 20 et 50, couleur Verte, pas de transparence
+        les 4 dernies parametres representent R=0, V=128, B=255, Alpha(ou transparence)=255
+    */
+    filledEllipseColor(fenetre->rendu, 300,200,20,50,SDL_PH_BLUE);
+    SDL_PH_FlushWindow(fenetre); // Mise à jour de l'écran
+    printf("Tapez une touche pour continuer\n"); getchar();
+
+    /* meme chose pour une ligne : attention au coordonnees, le point 0,0 est en haut a gauche */
+    lineColor(fenetre->rendu, 10,20,300,200,0xFF<<24|120<<16|9<<8|245);
+    SDL_PH_FlushWindow(fenetre); // Mise à jour de l'écran
+
+    printf("Tapez une touche pour quitter\n"); getchar();
+    SDL_PH_DestroyWindow(fenetre);
+    SDL_Quit();
+
+    return EXIT_SUCCESS;
   }
-    /* On affiche cette nouvelle image sur l'ecran, en position  350 150 */
-  SDL_PH_DrawIm8(f,im,nbligne,nbcol,350,150);
-
-  puts("Taper pour continuer"); getchar();
-  /* Liberation memoire de l'image 2D */
-  im=(unsigned char**)PH_DestroyImage((void**)im);
-  /* Destruction de la fenetre graphique SDL Phelma */
-  SDL_PH_DestroyWindow(f);
-  SDL_Quit();
-  exit(EXIT_SUCCESS);
-}
