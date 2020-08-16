@@ -72,62 +72,46 @@ Test du parcours en profondeur :
 Chemin trouvé entre les sommets 0 et 1
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
-Passer par Baa de la ligne M1 
+Départ de Aaa de la ligne M1 
+Arrivée à Baa par la ligne M1
 Le cout est de 5.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 2
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 2
-Passer par Caa de la ligne M1 
+Arrivée à Caa par la ligne M1
 Le cout est de 15.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 2
 Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 25.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 4
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
-Passer par Eaa de la ligne M1 
+Arrivée à Eaa par la ligne M1
 Le cout est de 12.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
 Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 22.000000
 
 ----------------------------------------------------------------------------
@@ -136,14 +120,10 @@ Pas de chemin trouvé entre les sommets 0 et 6
 Chemin trouvé entre les sommets 0 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
 Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 52.000000
 
 ----------------------------------------------------------------------------
@@ -152,44 +132,34 @@ Pas de chemin trouvé entre les sommets 1 et 0
 Chemin trouvé entre les sommets 1 et 2
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 2
-Passer par Caa de la ligne M1 
+Départ de Baa de la ligne M1 
+Arrivée à Caa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 2
+Départ de Baa de la ligne M1 
 Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 20.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 4
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
-Passer par Eaa de la ligne M1 
+Départ de Baa de la ligne M1 
+Arrivée à Eaa par la ligne M1
 Le cout est de 7.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
+Départ de Baa de la ligne M1 
 Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 17.000000
 
 ----------------------------------------------------------------------------
@@ -198,12 +168,9 @@ Pas de chemin trouvé entre les sommets 1 et 6
 Chemin trouvé entre les sommets 1 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
+Départ de Baa de la ligne M1 
 Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 47.000000
 
 ----------------------------------------------------------------------------
@@ -214,10 +181,8 @@ Pas de chemin trouvé entre les sommets 2 et 1
 Chemin trouvé entre les sommets 2 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 2
-Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Départ de Caa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
@@ -226,10 +191,8 @@ Pas de chemin trouvé entre les sommets 2 et 4
 Chemin trouvé entre les sommets 2 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 2
-Passer par Caa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Caa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
@@ -262,10 +225,8 @@ Pas de chemin trouvé entre les sommets 4 et 3
 Chemin trouvé entre les sommets 4 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 4
-Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Eaa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
@@ -274,10 +235,8 @@ Pas de chemin trouvé entre les sommets 4 et 6
 Chemin trouvé entre les sommets 4 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 4
-Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Départ de Eaa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 40.000000
 
 ----------------------------------------------------------------------------
@@ -308,10 +267,8 @@ Pas de chemin trouvé entre les sommets 6 et 4
 Chemin trouvé entre les sommets 6 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 6
-Passer par Gaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Gaa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 20.000000
 
 ----------------------------------------------------------------------------
@@ -330,248 +287,240 @@ Pas de chemin trouvé entre les sommets 7 et 4
 Chemin trouvé entre les sommets 7 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 7
-Passer par Haa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Haa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 6
 ----------------------------------------------------------------------------
-Fin du test du parcours en profondeur
+Fin du test du parcours en largeur
 ----------------------------------------------------------------------------
 Test du parcours en largeur :
 Chemin trouvé entre les sommets 0 et 1
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
-Passer par Baa de la ligne M1 
+Départ de Aaa de la ligne M1 
+Arrivée à Baa par la ligne M1
 Le cout est de 5.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 2
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 2
-Passer par Caa de la ligne M1 
+Arrivée à Caa par la ligne M1
 Le cout est de 15.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 2
 Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 25.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 4
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
-Passer par Eaa de la ligne M1 
+Arrivée à Eaa par la ligne M1
 Le cout est de 12.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
 Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 22.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 0 et 6
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 0 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 0
-Passer par Aaa de la ligne M1 
- Valeur de p 1
+Départ de Aaa de la ligne M1 
 Passer par Baa de la ligne M1 
- Valeur de p 4
 Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 52.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 1 et 0
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 2
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 2
-Passer par Caa de la ligne M1 
+Départ de Baa de la ligne M1 
+Arrivée à Caa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 2
+Départ de Baa de la ligne M1 
 Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 20.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 4
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
-Passer par Eaa de la ligne M1 
+Départ de Baa de la ligne M1 
+Arrivée à Eaa par la ligne M1
 Le cout est de 7.000000
 
 ----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
+Départ de Baa de la ligne M1 
 Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 17.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 1 et 6
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 1 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 1
-Passer par Baa de la ligne M1 
- Valeur de p 4
+Départ de Baa de la ligne M1 
 Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 47.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 2 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 2 et 1
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 2 et 3
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 2
-Passer par Caa de la ligne M1 
- Valeur de p 3
-Passer par Daa de la ligne M1 
+Départ de Caa de la ligne M1 
+Arrivée à Daa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 2 et 4
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 2 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 2
-Passer par Caa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Caa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 2 et 6
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 2 et 7
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 1
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 2
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 4
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 5
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 6
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 3 et 7
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 4 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 4 et 1
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 4 et 2
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 4 et 3
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 4 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 4
-Passer par Eaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Eaa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 4 et 6
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 4 et 7
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 4
-Passer par Eaa de la ligne M1 
- Valeur de p 7
-Passer par Haa de la ligne M1 
+Départ de Eaa de la ligne M1 
+Arrivée à Haa par la ligne M1
 Le cout est de 40.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 1
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 2
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 3
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 4
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 6
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 5 et 7
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 1
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 2
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 3
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 4
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 6 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 6
-Passer par Gaa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Gaa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 20.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 6 et 7
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 0
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 1
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 2
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 3
+----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 4
+----------------------------------------------------------------------------
 Chemin trouvé entre les sommets 7 et 5
 Voici le chemin le plus efficace
 ----------------------------------------------------------------------------
- Valeur de p 7
-Passer par Haa de la ligne M1 
- Valeur de p 5
-Passer par Faa de la ligne M1 
+Départ de Haa de la ligne M1 
+Arrivée à Faa par la ligne M1
 Le cout est de 10.000000
 
 ----------------------------------------------------------------------------
 Pas de chemin trouvé entre les sommets 7 et 6
-Fin du test du parcours en profondeur
+----------------------------------------------------------------------------
+Fin du test du parcours en largeur
 ----------------------------------------------------------------------------
